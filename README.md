@@ -40,6 +40,7 @@
 				switch (typeInput)
 				{
 				case 'I':
+				case 'i':
 					cout << "You chose iced coffee that would be 3 AED, Please input your money." << endl;
 					cin >> money;
 					if (money > 0) {
@@ -52,6 +53,7 @@
 					}
 					break;
 				case 'M':
+				case 'm':
 					cout << "You chose milk coffee that would be 2 AED, Please input your money." << endl;
 					cin >> money;
 					if (money > 0) {
@@ -64,6 +66,7 @@
 					}
 					break;
 				case 'B':
+				case 'b':
 					cout << "You chose black coffee that would be 1 AED, Please input your money." << endl;
 					cin >> money;
 					if (money > 0) {
