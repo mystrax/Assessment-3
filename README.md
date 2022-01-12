@@ -18,13 +18,16 @@
 	}
 	int main()
 	{
-		int input;
+		char input;
 		int money;
 		char typeInput;
 		menu();
 		cout << "Would you like a tea or a coffee? Press T for tea and C for coffee." << endl;
 		cin >> input;
-		while (input != 0)
+		while (cin.fail())
+		cin.ignore(1000, '|n');
+		cin.clear();
+		cout << "Enter an input: " << endl;
 			if (input == 'C' || input == 'c')
 			{
 				cout << "What type of coffee would you like?" << endl;
@@ -37,23 +40,26 @@
 					cout << "You chose iced coffee that would be 3 AED, Please input your money." << endl;
 					cin >> money;
 					cout << "Your change is: " << money - 3 << endl;
+					cout << "Thank you for buying" << endl;
 					break;
 				case 'M':
 					cout << "You chose milk coffee that would be 2 AED, Please input your money." << endl;
 					cin >> money;
 					cout << "Your change is: " << money - 2 << endl;
+					cout << "Thank you for buying" << endl;
 					break;
 				case 'B':
 					cout << "You chose black coffee that would be 1 AED, Please input your money." << endl;
 					cin >> money;
 					cout << "Your change is: " << money - 1 << endl;
+					cout << "Thank you for buying" << endl;
 					break;
 				}
 			}
 			else if (input == 'T' || input == 't')
 			{
 
-					cout << "What type of tea would you like?" << endl;
+				cout << "What type of tea would you like?" << endl;
 				cout << "Press the corresponding initial of the coffee that you like" << endl;
 				cout << "I = Iced Tea for 3 AED  | M = Milk Tea for 2 AED | B = Black Tea for 1 AED " << endl;
 				cin >> typeInput;
@@ -64,25 +70,26 @@
 					cout << "You chose iced tea that would be 3 AED, Please input your money." << endl;
 					cin >> money;
 					cout << "Your change is: " << money - 3 << endl;
+					cout << "Thank you for buying" << endl;
 					break;
 				case 'M':
 				case 'm':
 					cout << "You chose milk tea that would be 2 AED, Please input your money." << endl;
 					cin >> money;
 					cout << "Your change is: " << money - 2 << endl;
+					cout << "Thank you for buying" << endl;
 					break;
 				case 'B':
 				case 'b':
 					cout << "You chose black tea that would be 1 AED, Please input your money." << endl;
 					cin >> money;
 					cout << "Your change is: " << money - 1 << endl;
+					cout << "Thank you for buying" << endl;
 					break;
 				}
 			}
-			else{
+			else {
 				cout << "Please try again." << endl;
-				return 0;
 			}
-		cout << "Thank you for buying" << endl;
 		return 0;
 	}
